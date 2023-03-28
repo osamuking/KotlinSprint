@@ -1,7 +1,7 @@
 package Lesson1
 
 fun main() {
-    val ordersAmount: Int =75
+    val ordersAmount: Int = 75
     val gratitudeMessage: String = "Спасибо за покупку!"
 
     println(ordersAmount)
