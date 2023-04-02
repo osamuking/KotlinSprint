@@ -1,6 +1,7 @@
 package Lesson2
 
 fun main() {
+    
     val crystalOreMined = 7
     val ironOreMined = 11
 
