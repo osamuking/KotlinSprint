@@ -2,10 +2,10 @@ package Lesson2
 
 fun main(){
     val departureHour = 9
-    val departureMinute = 31
+    val departureMinute = 39
     val travelTime = 457 //minutes
 
-    val travelHours = (travelTime / 60).toInt()
+    val travelHours = (travelTime / 60)
     val travelMinutes = travelTime % 60
     var arrivingHour = departureHour + travelHours
     var arrivingMiinute = departureMinute + travelMinutes
