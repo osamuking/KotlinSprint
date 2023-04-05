@@ -2,27 +2,26 @@ package Lesson4
 
 fun main() {
 
-    var weight = 50
-    var volume = 100
-
-    println("Груз весом $weight кг и объемом $volume л относится" +
-            " к категории Average: ${(weight >= MIN_WEIGHT && weight
-                                     <= MAX_WEIGHT) && volume < VOLUME}")
+    var weight = 42
+    var volume = 95
+    var isGoodsAccepted = (weight >= MIN_WEIGHT && weight <= MAX_WEIGHT)
+                          && volume < VOLUME
+    println("\nГруз весом $weight кг и объемом $volume л относится" +
+            " к категории Average: $isGoodsAccepted")
 
     weight = 20
     volume = 80
-
+    isGoodsAccepted = (weight >= MIN_WEIGHT && weight <= MAX_WEIGHT)
+                       && volume < VOLUME
     println("Груз весом $weight кг и объемом $volume л относится" +
-                " к категории Average: ${(weight >= MIN_WEIGHT && weight
-                                          <= MAX_WEIGHT) && volume < VOLUME}")
+            " к категории Average: $isGoodsAccepted")
 
     weight = 50
     volume = 100
-
-    println(
-        "Груз весом $weight кг и объемом $volume л относится" +
-                " к категории Average: ${(weight >= MIN_WEIGHT && weight
-                                          <= MAX_WEIGHT) && volume < VOLUME}")
+    isGoodsAccepted = (weight >= MIN_WEIGHT && weight <= MAX_WEIGHT)
+                       && volume < VOLUME
+    println("Груз весом $weight кг и объемом $volume л относится" +
+            " к категории Average: $isGoodsAccepted")
 
 }
 
