@@ -6,7 +6,7 @@ fun main() {
     var moveTo = "E4"
     var moveNumber = 1
 
-    var currentState = "$moveFrom-$moveTo; $moveNumber"
+    var currentState = "$moveFrom-$moveTo;$moveNumber"
 
     println(currentState)
 
@@ -14,13 +14,13 @@ fun main() {
     moveTo = "F5"
     moveNumber = 2
 
-    println("$moveFrom-$moveTo; $moveNumber")
+    println("$moveFrom-$moveTo;$moveNumber")
 
 
     moveFrom = "D2"
     moveTo = "D3"
     moveNumber = 3
 
-    println("$moveFrom-$moveTo; $moveNumber")
+    println("$moveFrom-$moveTo;$moveNumber")
 
 }
