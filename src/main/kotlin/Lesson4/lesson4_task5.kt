@@ -15,10 +15,14 @@ fun main(){
     println("4. Благоприятны ли метеоусловия?(true/false): ")
     var isWeatherGood = readln().toBoolean()
 
-    var goodForSail = (!isBodyDamaged && (crewAmount > CREW_MIN_AMOUNT &&
-            crewAmount < CREW_RECOMMEND_AMOUNT) && foodStock > FOOD_MIN_AMOUNT) ||
-            (isBodyDamaged && crewAmount == CREW_RECOMMEND_AMOUNT && isWeatherGood
-             && foodStock > FOOD_MIN_AMOUNT)
+    val withoutDamage = !isBodyDamaged && (crewAmount > CREW_MIN_AMOUNT &&  crewAmount <
+                        CREW_RECOMMEND_AMOUNT) && foodStock > FOOD_MIN_AMOUNT
+
+    val witMinorDamage = isBodyDamaged && crewAmount == CREW_RECOMMEND_AMOUNT && isWeatherGood
+            && foodStock > FOOD_MIN_AMOUNT
+    
+    val goodForSail = withoutDamage || witMinorDamage
+
     if(goodForSail)
         println("Отплытие разрешено")
         else
