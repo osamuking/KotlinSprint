@@ -4,15 +4,16 @@ const val PASSWORD = "password"
 fun main() {
 
     println("Введите свой логин:")
-    val input1 = readln()
-    if (input1 == LOGIN) {
+
+    if (readln() == LOGIN) {
         println("Введите пароль:")
-        val input2 = readln()
-        if (input2 == PASSWORD) {
+
+        if (readln() == PASSWORD) {
             println("Добро пожаловать!")
         } else {
             println("Неверный пароль")
         }
+
     } else {println("Пользователь с таким логином не обраружен.\n" +
             "Зарегистрируйтесь на сайте.")}
 }
