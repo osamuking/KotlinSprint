@@ -1,5 +1,6 @@
 package Lesson5
 
+lesson5-task5
 fun main() {
 
     val number1 = (1..100).random()
@@ -42,3 +43,4 @@ fun main() {
     }
 
 }
+
