@@ -1,37 +1,33 @@
 package Lesson5
-
-lesson5-task5
+//Угадываем рандомные числа
 fun main() {
-
     val number1 = (1..100).random()
     val number2 = (1..100).random()
     var counter = 3
-
     println(
         "Угадайте два числа от 1 до 100 и получите главный приз!\n" +
-                "За одно угаданное число вы получите утешительный приз"
+                "За одно угаданное число вы получите утешительный приз."
     )
-
     while (counter > 0) {
-        if (counter == 1) {
-            println("У вас осталась $counter попытка.\nВведите первое число:")
-        } else if (counter == 3) {
-            println("У вас есть $counter попытки")
-        } else
-            println("У вас осталось $counter попытки")
+        when (counter) {
+            1 -> {println("(У вас осталась $counter попытка)\nВведите первое число:")
+            }
+            3 -> {println("(У вас есть $counter попытки)\nВведите первое число:")
+            }
+            else -> println("(У вас осталось $counter попытки)\nВведите первое число:")
+        }
         val input1 = readln().toInt()
         println("Введите второе число:")
         val input2 = readln().toInt()
-
-        if (((input1 == number1 || input1 == number2) &&
-                    (input2 == number1 || input2 == number2)))
-        {
+        if ((input1 != input2) && ((input1 == number1 || input1 == number2) &&
+                    (input2 == number1 || input2 == number2))
+        ) {
             println("Поздравляем! Вы выиграли главный приз!")
             break
         } else if ((input1 == number1 || input1 == number2) ||
-            (input2 == number1 || input2 == number2))
-        {
-            println("Вы выиграли утешительный приз.")
+            (input2 == number1 || input2 == number2)
+        ) {
+            println("Вы выиграли утешительный приз.\nПравильные номера: $number1 и $number2")
             break
         }
         counter--
@@ -39,8 +35,7 @@ fun main() {
             println("Игра окончена. Правильные номера: $number1 и $number2")
             break
         }
-        println("Неудача! Попробуйте еще раз")
+        println("Неудача! Попробуйте еще раз.")
+
     }
-
 }
-
