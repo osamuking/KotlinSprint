@@ -1,6 +1,8 @@
 package Lesson5
 //Угадываем рандомные числа
+
 fun main() {
+  
     val number1 = (1..100).random()
     val number2 = (1..100).random()
     var counter = 3
@@ -38,4 +40,3 @@ fun main() {
         println("Неудача! Попробуйте еще раз.")
 
     }
-}
