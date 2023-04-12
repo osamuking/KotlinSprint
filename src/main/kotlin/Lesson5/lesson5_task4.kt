@@ -1,4 +1,5 @@
 package Lesson5
+
 const val LOGIN = "Batman"
 const val PASSWORD = "password"
 fun main() {
@@ -18,3 +19,4 @@ fun main() {
                             "Зарегистрируйтесь на сайте.")}
 
 }
+

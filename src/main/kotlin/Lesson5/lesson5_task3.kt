@@ -1,5 +1,5 @@
 package Lesson5
-
+//Угадываем два числа
 fun main() {
 
     val number1 = 44
@@ -24,12 +24,12 @@ fun main() {
 
         if ((input1 != input2) && ((input1 == number1 || input1 == number2) &&
                     (input2 == number1 || input2 == number2)))
-         {
+        {
             println("Поздравляем! Вы выиграли главный приз!")
             break
         } else if ((input1 == number1 || input1 == number2) ||
             (input2 == number1 || input2 == number2))
-         {
+        {
             println("Вы выиграли утешительный приз.")
             break
         }
