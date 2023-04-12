@@ -2,7 +2,7 @@ package Lesson5
 //Угадываем рандомные числа
 
 fun main() {
-  
+
     val number1 = (1..100).random()
     val number2 = (1..100).random()
     var counter = 3
@@ -12,10 +12,14 @@ fun main() {
     )
     while (counter > 0) {
         when (counter) {
-            1 -> {println("(У вас осталась $counter попытка)\nВведите первое число:")
+            1 -> {
+                println("(У вас осталась $counter попытка)\nВведите первое число:")
             }
-            3 -> {println("(У вас есть $counter попытки)\nВведите первое число:")
+
+            3 -> {
+                println("(У вас есть $counter попытки)\nВведите первое число:")
             }
+
             else -> println("(У вас осталось $counter попытки)\nВведите первое число:")
         }
         val input1 = readln().toInt()
@@ -40,3 +44,4 @@ fun main() {
         println("Неудача! Попробуйте еще раз.")
 
     }
+}
