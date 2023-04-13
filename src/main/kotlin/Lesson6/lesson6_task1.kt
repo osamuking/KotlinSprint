@@ -15,7 +15,7 @@ fun main(){
     while (counter1 > 0) {
         if (readln() == newPassword) {
             println("Авторизация прошла успешно")
-            exitProcess(0)
+            return
         } else if(counter1 == 1) {
             break
         } else {
