@@ -5,13 +5,10 @@ fun main(){
     val passwordLength = readln().toInt()
     var password = ""
     print("Ваш пароль: ")
-
     for (i in 1..passwordLength) {
-        val x = (1..9).random().toString()
-        val y = ('a'..'z').random()
-        val z = ('a'..'z').random().uppercaseChar()
-        val mergedString = x + y + z
-        password += mergedString.random()
+    var data = (('a'..'z') + ('A'..'Z') + (1..9)).random().toString()
+        password += data
     }
     println(password)
+
 }
