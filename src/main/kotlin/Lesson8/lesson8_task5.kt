@@ -14,21 +14,16 @@ fun main() {
     val number = readln().toInt()
 
     while (i < number) {
-        if (i == 0) {
-            println("Enter the first ingredient:")
-            ingredientsArray += readln()
-        } else {
-            if (i == number - 1) {
-                println("Enter the last ingredient:")
-                ingredientsArray += readln()
-            } else {
-                println("Enter the next ingredient:")
-                ingredientsArray += readln()
-            }
+        when (i) {
+            0 -> println("Enter the first ingredient:")
+            number - 1 -> println("Enter the last ingredient:")
+            else -> println("Enter the next ingredient:")
         }
+        ingredientsArray += readln()
         i++
     }
     println("List of ingredients:")
     for (i in ingredientsArray)
         println(i)
+
 }
