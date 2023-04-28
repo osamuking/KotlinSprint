@@ -14,8 +14,8 @@ package Lesson8
 fun main() {
     val sweetBread = arrayOf("flour", "butter", "sugar", "salt", "skimmed milk", "walnuts", "yeast", "water")
     println("Ingredients for the recipe of a sweet bread:")
-    for (i in sweetBread)
-        println("${sweetBread.indexOf(i) + 1}. $i")
+
+    print(sweetBread)
 
     println("What ingredient would you like to change?")
     var ingredient = readln()
@@ -27,9 +27,13 @@ fun main() {
         val replacement = readln()
         sweetBread[sweetBread.indexOf(ingredient)] = replacement
         println("Done! You've saved a new recipe:")
-        for (i in sweetBread)
-            println("${sweetBread.indexOf(i) + 1}. $i")
+
+        print(sweetBread)
     }
 }
+fun print (x:Array<String>) {
+    for (i in x)
+        println("${x.indexOf(i) + 1}. $i")
 
+}
 
