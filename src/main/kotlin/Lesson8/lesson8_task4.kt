@@ -12,23 +12,23 @@ package Lesson8
 – выведи обновленный список с сообщением: “Готово! Вы сохранили следующий список: [список_ингредиентов]”. */
 
 fun main() {
-    val sweetBread = arrayOf("flour", "butter", "sugar", "salt", "skimmed milk", "walnuts", "yeast", "water")
+    val sweetBreadIngredients = arrayOf("flour", "butter", "sugar", "salt", "skimmed milk", "walnuts", "yeast", "water")
     println("Ingredients for the recipe of a sweet bread:")
 
-    print(sweetBread)
+    print(sweetBreadIngredients)
 
     println("What ingredient would you like to change?")
     var ingredient = readln()
 
-    if (ingredient !in sweetBread)
+    if (ingredient !in sweetBreadIngredients)
         println("There is no such ingredient in the recipe")
     else {
         println("What would you like to use instead of $ingredient?")
         val replacement = readln()
-        sweetBread[sweetBread.indexOf(ingredient)] = replacement
+        sweetBreadIngredients[sweetBreadIngredients.indexOf(ingredient)] = replacement
         println("Done! You've saved a new recipe:")
 
-        print(sweetBread)
+        print(sweetBreadIngredients)
     }
 }
 fun print (x:Array<String>) {
