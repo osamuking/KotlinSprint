@@ -15,7 +15,7 @@ package Lesson9
  */
 fun main() {
 
-    val incredibleRecipe = mutableListOf<String>("saucepan", "water", "salt")
+    val incredibleRecipe = mutableListOf("saucepan", "water", "salt")
     println("There are some general ingredients:")
     incredibleRecipe.forEach {
         println(it)
