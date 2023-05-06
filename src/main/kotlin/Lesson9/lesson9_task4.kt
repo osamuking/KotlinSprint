@@ -9,7 +9,7 @@ fun main(){
 
     println("Here's your list in alphabetical order:")
     listOfIngredients.sort()
-    listOfIngredients.forEach() {
+    listOfIngredients.forEach {
         println(it)
     }
 }
