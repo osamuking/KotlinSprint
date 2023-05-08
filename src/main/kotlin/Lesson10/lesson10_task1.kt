@@ -16,11 +16,11 @@ fun main() {
 
     print("Human's turn. Roll the dice!")
     readln()
-    val human = humanRolls()
+    val human = rollDice()
     println("Homo Sapience has got $human ${grammar(human)}\n")
     print("Super computer's turn. Roll the dice!")
     readln()
-    val machine = machineRolls()
+    val machine = rollDice()
     println("Super computer has got $machine ${grammar(machine)}\n")
     if (human > machine)
         println("The winner is Homo Sapience!")
@@ -32,11 +32,7 @@ fun main() {
 
 }
 
-fun humanRolls(): Int {
-    return (1..6).random()
-}
-
-fun machineRolls(): Int {
+fun rollDice(): Int {
     return (1..6).random()
 }
 
