@@ -10,10 +10,10 @@ package Lesson9
  */
 fun main(){
 
+    /*
     var number = ""
     val listOfIngredients = mutableListOf<String>()
-
-    /*var i = 1
+    var i = 1
     while (i <= 5) {
         when (i) {
             1 -> number = "first"
@@ -30,9 +30,13 @@ fun main(){
         }
         listOfIngredients.add(userInput)
             i++
-    }*/
+    }
+    */
 
-    for (i in 1 .. 5) {
+    var number = ""
+    val listOfIngredients = mutableSetOf<String>()
+
+    for (i in 1..5) {
         when (i) {
             1 -> number = "first"
             2 -> number = "second"
@@ -44,21 +48,16 @@ fun main(){
         val userInput = readln()
         if (listOfIngredients.contains(userInput)) {
             println("This ingredient is already in the list")
-            continue
         }
         listOfIngredients.add(userInput)
     }
-    listOfIngredients.sort()
 
-    val separator = ", "
-    val resultList = listOfIngredients.joinToString(separator)
-
-    print("${capitalizeFirstLetter(resultList)}.")
+    print("${capitalizeFirstLetter(listOfIngredients.sorted().joinToString(", "))}.")
 }
 
-    fun capitalizeFirstLetter(string: String) =
-  string.replaceFirstChar {
-     if (it.isLowerCase())
-         it.titlecase()
-     else it.toString()
+fun capitalizeFirstLetter(string: String) =
+    string.replaceFirstChar {
+        if (it.isLowerCase())
+            it.titlecase()
+        else it.toString()
 }
