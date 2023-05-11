@@ -11,17 +11,14 @@ package Lesson10
 fun main() {
     println("Enter desired password length")
     val passwordLength = readln().toInt()
-    password(passwordLength)
+    createPassword(passwordLength)
 
 }
 
-fun password(x: Int) {
+fun createPassword(length: Int) {
     var password = ""
-    val a = 0..9
-    val b: List<Char> = listOf('!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', '-', '.', '/', ' ')
-    val c = a + b
-
-    for (i in 0 until x)
-        password += c.random()
+    val range = ' ' .. '9'
+    for (i in 0 until length)
+        password += range.random()
     println("Here is your password:\n$password")
 }
