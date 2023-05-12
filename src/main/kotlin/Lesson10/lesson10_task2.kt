@@ -28,9 +28,9 @@ fun main() {
     println("You have been registered")
 }
 
-fun checkLength(x: String): Int {
-    val y: List<Char> = x.toList()
-     return y.size
+fun checkLength(string: String): Int {
+    val list: List<Char> = string.toList()
+     return list.size
 }
 fun warning() {
     println("You should use at least four symbols")
