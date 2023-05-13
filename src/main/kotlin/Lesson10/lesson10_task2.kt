@@ -13,25 +13,25 @@ fun main() {
 
     println("Enter your login")
     var log = readln()
-    while (checkLength(log) < 4) {
+    while (checkLength(log)) {
         warning()
         log = readln()
     }
 
     println("Enter your password")
     var pass = readln()
-    while (checkLength(pass) < 4) {
+    while (checkLength(pass)) {
         warning()
         pass = readln()
-
     }
     println("You have been registered")
 }
 
-fun checkLength(string: String): Int {
+fun checkLength(string: String): Boolean {
     val list: List<Char> = string.toList()
-     return list.size
+    return (list.size < 4)
 }
+
 fun warning() {
     println("You should use at least four symbols")
 }
