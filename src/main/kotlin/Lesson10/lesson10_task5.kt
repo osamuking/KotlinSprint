@@ -2,10 +2,10 @@ package Lesson10
 
 fun main() {
     println("Enter your login")
-    var log = readln()
-    while (proofLength(log)) {
+    var yourLogin = readln()
+    while (proofLength(yourLogin)) {
         attention()
-        log = readln()
+        yourLogin = readln()
     }
 
     println("We can generate a password for you. Enter the desired password length")
@@ -15,8 +15,8 @@ fun main() {
 
     println("""In order to use our service you must enter your login and password.
 Your login:
-    """.trimIndent())
-    while (readln() != log) {
+    """.trimMargin().trimIndent())
+    while (readln() != yourLogin) {
         println("We couldn't find your account, try again:")
     }
     println("Your password:")
@@ -25,7 +25,7 @@ Your login:
     }
 
     println("""Now hit the Enter key and wait about 3 seconds so that
-we can send you an email with a verification code.""".trimIndent())
+we can send you an email with a verification code.""".trimMargin().trimIndent())
     while (true) {
         val code = generateCode().toInt()
         readln()
@@ -40,8 +40,9 @@ we can send you an email with a verification code.""".trimIndent())
 }
 
 fun proofLength(string: String): Boolean {
-    val list: List<Char> = string.toList()
-    return (list.size < 4)
+    /* val list: List<Char> = string.toList()
+    return (list.size < 4) */
+    return (string.length < 4)
 }
 
 fun attention() {
