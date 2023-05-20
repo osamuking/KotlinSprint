@@ -12,71 +12,54 @@ package Lesson10
  – в программе должно быть минимум 2 метода (для проведения раунда и для генерации значений кубиков)
  */
 
+import kotlin.random.Random
+
 fun main() {
-    println("Start the game")
-    startOver()
-}
-
-fun rollTheDice(): Int {
-    val a = (1..6).random()
-    val b = (1..6).random()
-    return a + b
-}
-
-fun startOver() {
+    var countRound = 1
     var humanTotalPoints = 0
     var machineTotalPoints = 0
-    var roundCount = 1
     var humanWinningRounds = 0
-    var machineWinningRounds = 0
+//    var machineWinningRounds = 0
 
-    while (true) {
-        var humanOneRoundPoints = 0
-        var machineOneRoundPoints = 0
-        println("Round $roundCount")
-        print("Human's turn. Roll the dice!")
+    println("\nWe start the game. To kick a round off hit the Enter key.")
+    do {
+        print("Round $countRound. Human's turn. Roll the dice!")
         readln()
-        humanOneRoundPoints += rollTheDice()
+        val humanOneRoundPoints = rollTheDice()
+        println("Homo Sapience got $humanOneRoundPoints points\n")
         humanTotalPoints += humanOneRoundPoints
-        println("Homo Sapience got $humanOneRoundPoints ${setGrammar(humanOneRoundPoints)}")
 
-        print("Machine's turn. Roll the dice!")
+        print("Super computer's turn. Roll the dice!")
         readln()
-        machineOneRoundPoints += rollTheDice()
+        val machineOneRoundPoints = rollTheDice()
+        println("Super computer got $machineOneRoundPoints points\n")
         machineTotalPoints += machineOneRoundPoints
-        println("Super Computer got $machineOneRoundPoints ${setGrammar(machineOneRoundPoints)}")
 
         if (humanOneRoundPoints > machineOneRoundPoints)
             humanWinningRounds++
-        else if (humanOneRoundPoints < machineOneRoundPoints)
-            machineWinningRounds++
 
-        println("\nWanna give it another shot? (y/n)")
+//         else if (humanOneRoundPoints < machineOneRoundPoints)
+//            machineWinningRounds++
+//         else
+//            println("We have a tie score.")
 
-        when (readln()) {
-            "y" -> {
-                roundCount++
-                continue
-            }
+        countRound++
 
-            "n" -> {
-                if (humanWinningRounds < machineWinningRounds)
-                    println("Game's over. Winner - Super Computer. It won $machineWinningRounds rounds and got " +
-                                    "$machineTotalPoints points")
-                else if (humanWinningRounds > machineWinningRounds)
-                    println("Game's over. Winner - Homo Sapience. He won $humanWinningRounds rounds and got " +
-                                    "$humanTotalPoints points")
-            }
-            else -> {println("Tie score")}
-        }
-        break
+        println("Wanna give it another shot? (y/n)")
     }
+    while (startOver(readln()))
+
+    println("Homo Sapience won $humanWinningRounds rounds")
+
 }
 
-fun setGrammar(a: Int): String {
+fun rollTheDice(): Int {
+    val a = Random.nextInt(1, 6)
+    val b = Random.nextInt(1, 6)
+    println("We have $a  and $b")
+    return a + b
+}
 
-    return if (a == 1)
-        "point"
-    else
-        "points"
+fun startOver(x: String): Boolean {
+    return x == "y"
 }
