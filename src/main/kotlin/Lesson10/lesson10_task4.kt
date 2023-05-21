@@ -19,7 +19,6 @@ fun main() {
     var humanTotalPoints = 0
     var machineTotalPoints = 0
     var humanWinningRounds = 0
-//    var machineWinningRounds = 0
 
     println("\nWe start the game. To kick a round off hit the Enter key.")
     do {
@@ -35,13 +34,8 @@ fun main() {
         println("Super computer got $machineOneRoundPoints points\n")
         machineTotalPoints += machineOneRoundPoints
 
-        if (humanOneRoundPoints > machineOneRoundPoints)
+        if (checkResults(humanOneRoundPoints, machineOneRoundPoints))
             humanWinningRounds++
-
-//         else if (humanOneRoundPoints < machineOneRoundPoints)
-//            machineWinningRounds++
-//         else
-//            println("We have a tie score.")
 
         countRound++
 
@@ -54,12 +48,16 @@ fun main() {
 }
 
 fun rollTheDice(): Int {
-    val a = Random.nextInt(1, 6)
-    val b = Random.nextInt(1, 6)
-    println("We have $a  and $b")
-    return a + b
+    val dice1 = Random.nextInt(1, 6)
+    val dice2 = Random.nextInt(1, 6)
+    println("We have $dice1  and $dice2")
+    return dice1 + dice2
 }
 
-fun startOver(x: String): Boolean {
-    return x == "y"
+fun startOver(decision: String): Boolean {
+    return decision == "y"
+}
+
+fun checkResults(human: Int, machine: Int): Boolean {
+    return human > machine
 }
